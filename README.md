@@ -1,6 +1,6 @@
-# SalePro - Sistema POS 📱💰
+# BillieOne - Sistema POS 📱💰
 
-SalePro es una aplicación completa de sistema POS (Point of Sale) desarrollada en Flutter, diseñada para gestionar ventas, inventario, clientes, proveedores y mucho más. La aplicación ofrece una solución integral para pequeñas y medianas empresas que necesitan digitalizar sus procesos de venta.
+BillieOne es una aplicación completa de sistema POS (Point of Sale) desarrollada en Flutter, diseñada para gestionar ventas, inventario, clientes, proveedores y mucho más. La aplicación ofrece una solución integral para pequeñas y medianas empresas que necesitan digitalizar sus procesos de venta.
 
 ## 🚀 Características Principales
 
@@ -166,7 +166,7 @@ lib/
 ## 🏗️ Arquitectura de la Aplicación
 
 ### Patrón de Arquitectura
-SalePro utiliza el patrón **Provider** para la gestión de estado, proporcionando:
+BillieOne utiliza el patrón **Provider** para la gestión de estado, proporcionando:
 - **Separación de responsabilidades**: Lógica de negocio separada de la UI
 - **Reactividad**: Actualizaciones automáticas de la interfaz
 - **Escalabilidad**: Fácil mantenimiento y extensión del código
