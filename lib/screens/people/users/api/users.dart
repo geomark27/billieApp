@@ -1,10 +1,3 @@
-/*
-  Author Name: Zarif Sadman
-  Company: ZS Software Studio
-  Website: https://zarifprogrammer.com/
-  File Name: users
-*/
-
 import 'package:salepro/api/base.dart';
 import 'package:salepro/models/data.dart';
 import 'package:salepro/models/message.dart';
@@ -19,9 +12,10 @@ class UsersAPI extends BaseAPI<User> {
   // --- MÉTODOS COMPLETOS Y CORREGIDOS PARA EL ENFOQUE MANUAL ---
 
   /// Obtiene una lista de usuarios, con soporte para paginación y búsqueda.
-  static Future<Data<User>> get(String? token, {int page = 1, String query = ''}) async {
+  static Future<Data<User>> get(String? token,
+      {int page = 1, String query = ''}) async {
     final api = UsersAPI();
-    
+
     // Prepara los parámetros de búsqueda si existen
     final searchParams = <String, String>{};
     if (query.isNotEmpty) {
@@ -36,10 +30,31 @@ class UsersAPI extends BaseAPI<User> {
     );
   }
 
-  /// Crea un nuevo usuario.
-  static Future<Message> create(User user, String? token) async {
+  /// Crea un nuevo usuario con datos específicos para el formulario de agregar usuario.
+  static Future<Message> create({
+    required String name,
+    required String email,
+    required String password,
+    required String phone,
+    required String roleId,
+    bool isActive = true,
+    String? token,
+  }) async {
     final api = UsersAPI();
-    return await api.POST(data: user, token: token);
+
+    // Crear objeto User temporal para envío (sin ID ya que es nuevo)
+    final userData = User(
+      id: 0, // ID temporal, será asignado por el servidor
+      name: name,
+      email: email,
+      phoneNumber: phone,
+      roleId: int.parse(roleId),
+      billerId: 1, // Valor por defecto, puede ser ajustado según necesidades
+      warehouseId: 1, // Valor por defecto, puede ser ajustado según necesidades
+      isActive: isActive ? 1 : 0,
+    );
+
+    return await api.POST(data: userData, token: token);
   }
 
   /// Actualiza un usuario existente.
@@ -52,5 +67,11 @@ class UsersAPI extends BaseAPI<User> {
   static Future<Message> delete(int id, String? token) async {
     final api = UsersAPI();
     return await api.DELETE(id: id, token: token);
+  }
+
+  /// Obtiene un usuario específico por ID.
+  static Future<User?> getById(int id, String? token) async {
+    final api = UsersAPI();
+    return await api.SINGLE(token: token);
   }
 }

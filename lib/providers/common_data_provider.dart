@@ -255,12 +255,14 @@ class CommonDataProvider with ChangeNotifier, DiagnosticableTreeMixin {
   Future<void> getData() async {
     print('--- Iniciando getData() en CommonDataProvider ---');
     try {
-      final Map<String, dynamic> registrationData =
-          await getRegistrationFormData();
+      final Map<String, dynamic> registrationData = await getRegistrationFormData();
+      final Map<String, dynamic> rolesForUser = await getRolesForUser();
+
       _roles = createModelFromMap(
-        registrationData['roles'],
+        rolesForUser['roles'],
         Role.fromJson,
       );
+      
       _customerGroups = createModelFromMap(
         registrationData['customer_groups'],
         CustomerGroup.fromJson,
