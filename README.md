@@ -278,9 +278,9 @@ Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-**Zarif Sadman**
-- Empresa: ZS Software Studio
-- Website: [zarifprogrammer.com](https://zarifprogrammer.com/)
+**Marcos Ramos**
+- Empresa: Azentic Sys
+- Website: [azentic.sys](https://azentic.sys)
 
 ## 📞 Soporte
 
