@@ -1,0 +1,48 @@
+name: salepro
+description: "Salepro is a POS system."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  provider: ^6.1.2
+  shared_preferences: ^2.3.3
+  heroicons: ^0.11.0
+  font_awesome_flutter: ^10.8.0
+  file_picker: ^8.3.7
+  quill_html_editor_v2: ^2.2.10
+  intl: 0.20.2
+  http: ^1.2.2
+  awesome_snackbar_content: ^0.1.4
+  lottie: ^3.2.0
+  flutter_dynamic_icon_plus: ^1.2.1
+  onesignal_flutter: ^5.2.9
+  flutter_animate: ^4.5.2
+  liquid_pull_to_refresh: ^3.0.1
+  cached_network_image: ^3.4.1
+  countup: ^0.1.4
+  flutter_barcode_scanner_plus: ^3.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/logos/
+    - assets/images/icons/
+    - assets/animations/
